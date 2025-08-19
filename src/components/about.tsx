@@ -2,6 +2,8 @@ import { Download, Github, Linkedin, Mail, MapPin, Twitter } from "lucide-react"
 import { FlipWordsDemo } from "./flip-words";
 import { Button } from "./ui/button";
 import { Hero } from "./hero";
+import { Highlight } from "./ui/hero-highlight";
+import { AnimatedGroup } from "./ui/animated-group";
 
 export function About(){
     return (
@@ -9,10 +11,12 @@ export function About(){
     <div className="grid sm:grid-cols-3 space-y-15 sm:space-y-0 sm:space-x-4 p-2 ">
 
        <div className=" pl-0 sm:p-2 sm:px-6 space-y-2 sm:col-span-2">
+        <AnimatedGroup>
             <div className="space-y-3">
                 <h1 className="text-3xl sm:text-4xl tracking-tight font-[600]">Pravin Choudhary</h1>
                 <FlipWordsDemo/>
             </div>
+            </AnimatedGroup>
             <div>
                 <div className="text-muted-foreground dark:text-muted-foreground flex-col justify-center pl-0 p-2 space-y-2 " >
                     <div className="flex items-center space-x-2 "> 
@@ -26,9 +30,9 @@ export function About(){
                 </div>
             </div>
             <div className="text-wrap">
-                <p className="text-muted-foreground dark:text-muted-foreground flex justify-center pl-0 p-2 px-5 text-sm sm:text-base font-normal sm:text-[16px]">
+                <p className="text-muted-foreground dark:text-muted-foreground pl-0 p-2 px-4 text-sm sm:text-base font-normal sm:text-[16px]">
                     A goal-oriented software developer with experience in building web applications using modern technologies 
-                    like React, Next.js, and more. Seeking to leverage my technical skills to deliver exceptional user experiences
+                    like <Highlight className="text-black dark:text-white"> React, Next.js, and more.</Highlight> Seeking to leverage my technical skills to deliver exceptional user experiences
                 </p>
             </div>
 

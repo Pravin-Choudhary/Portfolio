@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Github, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { BoxReveal } from "./magicui/box-reveal"
+import { ScrollArea } from "./ui/scroll-area"
 
 const projects = [
   {
@@ -66,13 +67,22 @@ export default function Projects() {
             >
               <div className="overflow-hidden relative h-[300px] md:h-full border-b md:border-b-0 md:border-r">
                 <div className="absolute inset-0 overflow-y-auto scrollbar-hide">
-                  <Image
+                  {/* <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    width={800}
+                    height={1200}
+                    className="w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  /> */}
+                  <ScrollArea className="h-full w-full">
+                    <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     width={800}
                     height={1200}
                     className="w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
+                  </ScrollArea>
                 </div>
               </div>
 

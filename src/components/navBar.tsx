@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 export function NavBar(){
     return (
         <div className="flex justify-between items-center w-full">
-            <div className="text-2xl font-medium tracking-normal">Portfolio</div>
+            <div className="text-2xl font-medium tracking-normal text-transparent bg-clip-text bg-gradient-to-b from-blue-500 to-blue-600">Portfolio</div>
             <div className="p-2 max-w-[120px] md:max-w-md w-full flex justify-between items-center">
                 <div>
                     <Button variant={"ghost"} asChild>
