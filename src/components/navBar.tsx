@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 export function NavBar(){
     return (
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center w-full">
             <div className="text-2xl font-medium tracking-normal">Portfolio</div>
             <div className="p-2 max-w-[120px] md:max-w-md w-full flex justify-between items-center">
                 <div>
