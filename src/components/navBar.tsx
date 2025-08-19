@@ -8,7 +8,7 @@ export function NavBar(){
             <div className="text-2xl font-medium tracking-normal">Portfolio</div>
             <div className="p-2 max-w-[120px] md:max-w-md w-full flex justify-between items-center">
                 <div>
-                    <Button variant={"ghost"}>
+                    <Button variant={"ghost"} asChild>
                         <AnimatedThemeToggler/>
                     </Button>
                 </div>

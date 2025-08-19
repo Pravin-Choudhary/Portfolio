@@ -6,7 +6,7 @@ import { Hero } from "./hero";
 export function About(){
     return (
     <>
-    <div className="grid sm:grid-cols-3 space-y-8 sm:space-y-0 sm:space-x-4 p-2 ">
+    <div className="grid sm:grid-cols-3 space-y-15 sm:space-y-0 sm:space-x-4 p-2 ">
 
        <div className=" pl-0 sm:p-2 sm:px-6 space-y-2 sm:col-span-2">
             <div className="space-y-3">

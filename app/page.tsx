@@ -1,4 +1,5 @@
 import { About } from "@/components/about";
+import { EducationSection } from "@/components/educationSection";
 import { NavBar } from "@/components/navBar";
 import { SkillSection } from "@/components/skills";
 
@@ -9,11 +10,16 @@ export default function Page() {
       <div className="mt-2 p-2 max-w-4xl w-full">
             <NavBar/>
       </div>
-      <div className="p-2 max-w-4xl w-full">
-           <About/>
-      </div>
-      <div className="p-2 max-w-4xl w-full">
-           <SkillSection/>
+      <div className="space-y-20">
+          <div className="p-2 max-w-4xl w-full">
+              <About/>
+          </div>
+          <div className="p-2 max-w-4xl w-full">
+              <SkillSection/>
+          </div>
+          <div className="p-2 max-w-4xl w-full">
+              <EducationSection/>
+          </div>
       </div>
     </div>
   )
