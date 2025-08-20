@@ -12,10 +12,20 @@ import { Textarea } from "./ui/textarea";
 
 
 const formSchema = z.object({
-  username: z.string().min(2).max(25),
-  email : z.string().email(),
-  msg : z.string().min(10).max(150)
-})
+  username: z
+    .string()
+    .min(5, { message: "Username must be at least 5 characters long." })
+    .max(25, { message: "Username cannot exceed 25 characters." }),
+
+  email: z
+    .string()
+    .email({ message: "Please enter a valid email address (e.g., name@example.com)." }),
+
+  msg: z
+    .string()
+    .min(10, { message: "Message must be at least 10 characters long to provide enough detail." })
+    .max(150, { message: "Message cannot be longer than 150 characters. Please shorten it." }),
+});
 
 export function Contact(){
 

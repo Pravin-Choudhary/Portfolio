@@ -11,6 +11,7 @@ const education = {
 export function EducationSection(){
     return (
         <>
+       
             <div className="pl-0 sm:p-2 sm:px-6 space-y-10">
                     <div>
                         <h3 className="text-3xl sm:text-[32px] tracking-normal font-[600] px-1">Education</h3>
@@ -30,6 +31,7 @@ export function EducationSection(){
                         </div>
                     </div>
             </div>
+
         </>
     )
 }

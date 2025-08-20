@@ -4,6 +4,7 @@ import { EducationSection } from "@/components/educationSection";
 import { NavBar } from "@/components/navBar";
 import Projects from "@/components/projects";
 import { SkillSection } from "@/components/skills";
+import { InView } from "@/components/ui/in-view";
 import { Copyright } from "lucide-react";
 
 
@@ -13,8 +14,8 @@ export default function Page() {
 
   return (
    
-    <div className="flex flex-col items-center space-y-10">
-      <div className="mt-2 p-2 w-full sticky top-0 z-50 transition-all duration-200 shadow backdrop-blur-sm flex justify-center">
+    <div className="flex flex-col items-center space-y-10 ">
+      <div className="p-2 w-full sticky top-0 z-50 transition-all duration-200 shadow backdrop-blur-sm flex justify-center mt-2">
         <div className="max-w-4xl w-full flex justify-center ">
               <NavBar/>
         </div>
@@ -26,9 +27,28 @@ export default function Page() {
           <div className="p-2 max-w-4xl w-full">
               <SkillSection/>
           </div>
+           <InView
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 30,
+              scale: 0.95,
+              filter: 'blur(4px)',
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              filter: 'blur(0px)',
+            },
+          }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          viewOptions={{ margin: '0px 0px -350px 0px' }}
+        >
           <div className="p-2 max-w-4xl w-full">
               <EducationSection/>
           </div>
+        </InView>
           <div className="p-2 max-w-4xl w-full">
               <Projects/>
           </div>
