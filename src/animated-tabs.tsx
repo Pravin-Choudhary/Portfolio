@@ -1,3 +1,4 @@
+"use client"
 
 import {
   NavigationMenu,
@@ -11,14 +12,16 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { Button } from "./components/ui/button";
+import Link from "next/link";
+import { PopoverClose } from "@radix-ui/react-popover";
 
 
 const navigationLinks = [
-  { href: "#", label: "About", active: true },
-  { href: "#", label: "Skills" },
-  { href: "#", label: "Eduation" },
-  { href: "#", label: "Projects" },
-  { href:'#' , label: "Contact"}
+  { href: "#about", label: "About", active: true },
+  { href: "#skills", label: "Skills" },
+  { href: "#education", label: "Education" },
+  { href: "#projects", label: "Projects" },
+  { href: '#contact' , label: "Contact"}
 ]
 
 export function AnimatedTabsHover() {
@@ -65,12 +68,17 @@ export function AnimatedTabsHover() {
                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                   {navigationLinks.map((link, index) => (
                     <NavigationMenuItem key={index} className="w-full">
-                      <NavigationMenuLink
-                        href={link.href}
-                        className="py-1.5"
-                        active={link.active}
-                      >
-                        {link.label}
+                      <NavigationMenuLink asChild>
+                        <PopoverClose>
+                            <Link href={link.href} scroll={false}
+                             onClick={() => {
+                                    document.getElementById(link.href.replace("#", ""))?.scrollIntoView({ 
+                                      behavior: "smooth" 
+                                    })
+                                  }}>
+                            {link.label}
+                          </Link>
+                          </PopoverClose>
                       </NavigationMenuLink>
                     </NavigationMenuItem>
                   ))}
