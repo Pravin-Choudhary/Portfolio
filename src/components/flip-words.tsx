@@ -7,7 +7,7 @@ export function FlipWordsDemo() {
 
   return (
       <div className="text-lg mx-auto text-muted-foreground dark:text-muted-foreground">
-         I'm a<FlipWords words={words}/> <br />
+         Im &apos; a<FlipWords words={words}/> <br />
       </div>
   );
 }

@@ -122,9 +122,9 @@ function onSubmit(values: z.infer<typeof formSchema>){
                                 name="username"
                                 render={({ field }) => (
                                   <FormItem className="space-x-2 space-y-1">
-                                      <FormLabel>Name</FormLabel>
+                                      <FormLabel className="px-2 text-base">Name</FormLabel>
                                       <FormControl>
-                                        <Input placeholder="Your Name" {...field} />
+                                        <Input placeholder="Your Name" {...field} className="w-[95%] sm:w-full" />
                                       </FormControl>
                                       <FormMessage />
                                   </FormItem>
@@ -136,9 +136,9 @@ function onSubmit(values: z.infer<typeof formSchema>){
                                 name="email"
                                 render={({ field }) => (
                                   <FormItem className="space-x-2 space-y-1">
-                                      <FormLabel>Email</FormLabel>
+                                      <FormLabel  className="px-2 text-base">Email</FormLabel>
                                       <FormControl>
-                                        <Input placeholder="Your Name" {...field} />
+                                        <Input placeholder="Your Name" {...field} className="w-[95%] sm:w-full" />
                                       </FormControl>
                                       <FormMessage />
                                   </FormItem>
@@ -151,16 +151,16 @@ function onSubmit(values: z.infer<typeof formSchema>){
                                 name="msg"
                                 render={({ field }) => (
                                   <FormItem className="space-x-2 space-y-1">
-                                      <FormLabel>Message</FormLabel>
+                                      <FormLabel  className="px-2 text-base">Message</FormLabel>
                                       <FormControl>
-                                        <Textarea placeholder="Your Name" {...field} className="min-h-[100px]"/>
+                                        <Textarea placeholder="Your Name" {...field} className="min-h-[100px] w-[95%] sm:w-full"/>
                                       </FormControl>
                                       <FormMessage />
                                   </FormItem>
                                 )}
                               />
 
-                              <Button type="submit" className="w-full">Submit Message</Button>
+                              <Button type="submit" className="w-[95%] sm:w-full">Submit Message</Button>
                             </form>
                         </Form>
                     </div>

@@ -2,15 +2,18 @@ import {
   Download,
   Github,
   Linkedin,
+  LinkedinIcon,
   Mail,
   MapPin,
   Twitter,
+  TwitterIcon,
 } from "lucide-react";
 import { FlipWordsDemo } from "./flip-words";
 import { Button } from "./ui/button";
 import { Hero } from "./hero";
 import { Highlight } from "./ui/hero-highlight";
 import { AnimatedGroup } from "./ui/animated-group";
+import Link from "next/link";
 
 export function About() {
   return (
@@ -182,18 +185,30 @@ export function About() {
                   Resume
                 </p>
               </Button>
-              <Button variant={"outline"}>
-                <Github />
-              </Button>
-              <Button variant={"outline"}>
-                <Mail />
-              </Button>
-              <Button variant={"outline"}>
-                <Twitter />
-              </Button>
-              <Button variant={"outline"}>
-                <Linkedin />
-              </Button>
+
+              <Link href="https://github.com/Pravin-Choudhary" target="_blank">
+                <Button variant={"outline"} className="cursor-pointer">
+                  <Github />
+                </Button>
+              </Link>
+
+              <Link href="https://github.com/Pravin-Choudhary" target="_blank">
+                <Button variant={"outline"} className="cursor-pointer">
+                  <Mail />
+                </Button>
+              </Link>
+
+              <Link href="https://github.com/Pravin-Choudhary" target="_blank">
+                <Button variant={"outline"} className="cursor-pointer">
+                  <TwitterIcon />
+                </Button>
+              </Link>
+
+              <Link href="https://www.linkedin.com/in/pravin-choudhary-945658375/" target="_blank">
+                <Button variant={"outline"} className="cursor-pointer">
+                  <LinkedinIcon />
+                </Button>
+              </Link>
             </div>
           </AnimatedGroup>
         </div>
