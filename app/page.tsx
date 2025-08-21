@@ -13,7 +13,7 @@ import { Copyright } from "lucide-react";
 export default function Page() {
 
   return (
-    <div className="flex flex-col items-center space-y-10 w-full">
+    <div className="flex flex-col items-center space-y-10 w-full pl-3">
       <div className="p-2 w-full sticky top-0 z-50 transition-all duration-200 shadow backdrop-blur-sm flex justify-center mt-2">
         <div className="max-w-4xl w-full flex justify-center ">
               <NavBar/>

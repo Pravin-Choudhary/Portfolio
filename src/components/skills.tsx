@@ -81,7 +81,7 @@ export function SkillSection(){
             }}
           >
                 <div>
-                        <h3 className="text-xl sm:text-[22px] tracking-normal font-[500]">Languages</h3>
+                        <h3 className="text-xl sm:text-[22px] tracking-normal font-[500] px-2">Languages</h3>
                 </div>
                 <div><CodingLanguage/></div>
             </AnimatedGroup>
@@ -117,7 +117,7 @@ export function SkillSection(){
             }}
           >
                 <div>
-                    <h3 className="text-xl sm:text-[22px] tracking-normal font-[500] px-1">Libraries & Framework</h3>
+                    <h3 className="text-xl sm:text-[22px] tracking-normal font-[500] px-2">Libraries & Framework</h3>
                 </div>
                 <div><LibrariesAndFramework/></div>
             </AnimatedGroup>
@@ -153,7 +153,7 @@ export function SkillSection(){
             }}
           >    
                 <div>
-                    <h3 className="text-xl sm:text-[22px] tracking-normal font-[500] px-1">Databases</h3>
+                    <h3 className="text-xl sm:text-[22px] tracking-normal font-[500] px-2">Databases</h3>
                 </div>
                 <div><DatabasesLanguage/></div>
             </AnimatedGroup>
@@ -189,7 +189,7 @@ export function SkillSection(){
             }}
           > 
                  <div>
-                    <h3 className="text-xl sm:text-[22px] tracking-normal font-[500] px-1">Tools & Platform</h3>
+                    <h3 className="text-xl sm:text-[22px] tracking-normal font-[500] px-2">Tools & Platform</h3>
                 </div>
                 <div><ToolsAndPlatform/></div>
             </AnimatedGroup>
