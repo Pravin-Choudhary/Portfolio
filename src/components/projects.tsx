@@ -11,34 +11,34 @@ import { ScrollArea } from "./ui/scroll-area"
 
 const projects = [
   {
-    logo: "/matchwize.svg",
-    title: "Matchwize",
+    logo: "/codium.svg",
+    title: "Codium",
     description:
-      "matchwize analyzes your resume against job descriptions to give you a match score and actionable suggestions to improve your chances.",
-    image: "/matchwize.webp",
-    tags: ["Next.js", "Node.js", "Express.js", "Supabase", "Tailwind CSS", "Gemini API"],
-    demoUrl: "https://matchwize.com/",
+      "Codium is an AI-powered coding IDE designed to make development faster and smarter. It provides intelligent code suggestions, error detection, and explanations, helping developers write and understand code more efficiently.",
+    image: "/codium.webp",
+    tags: ["Next.js", "shadcn UI", "Neon DB Postgres", "Tailwind CSS", "Open-AI SDK" , "Sand-box", "NextAuth.js"],
+    demoUrl: "https://codium.100xdevs.me/",
     githubUrl: "",
     features: [
-      "Gemini API integration for resume analysis",
-      "Supabase for data storage",
+      "AI Code Assistance – Autocomplete, refactor, and explain code using Open-ai API",
+      "In-browser IDE – Write, edit, and test code directly in the browser",
+      "Error Detection & Fixes – AI-powered debugging suggestions",
+      "Neon DB Integration – Store projects, snippets, and user history securely"
     ],
   },
   {
-    logo: "/englishexpresswayLogo.svg",
-    title: "English Expressway",
+    logo: "/notebook-lm.svg",
+    title: "Notebook LM",
     description:
-      "An online platform to join courses and buy ebooks to learn English, featuring role-based authentication and payment integration.",
-    image: "/englishexpressway.webp",
-    tags: ["Next.js", "NextAuth.js", "Tailwind CSS", "MongoDB", "Razorpay"],
-    demoUrl: "https://www.englishexpressway.com/",
+      "Notebook LM is an AI-powered note management tool that helps users organize, summarize, and query their notes efficiently, acting as a smart study/work companion.",
+    image: "/notebook-lm.webp",
+    tags: ["Next.js", "NextAuth.js", "Tailwind CSS", "Neon DB Postgres", "Node.js" , "Express.js" , "Gemini API"],
+    demoUrl: "https://notebook-lm.100xdevs.me/",
     githubUrl: "",
     features: [
-      "Role-based authentication using NextAuth.js and JWT",
-      "Integrated Razorpay for payment transactions",
-      "Responsive landing page with course listings",
-      "User dashboard for enrolled courses",
-      "Admin dashboard for content management",
+      "AI-powered summarization of documents",
+      "Generate chatbots to answer questions from content or Website",
+      "Organize and manage notes/docs in one place",
     ],
   }
 ]
@@ -67,13 +67,7 @@ export default function Projects() {
             >
               <div className="overflow-hidden relative h-[300px] md:h-full border-b md:border-b-0 md:border-r">
                 <div className="absolute inset-0 overflow-y-auto scrollbar-hide">
-                  {/* <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    width={800}
-                    height={1200}
-                    className="w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                  /> */}
+
                   <ScrollArea className="h-full w-full">
                     <Image
                     src={project.image || "/placeholder.svg"}

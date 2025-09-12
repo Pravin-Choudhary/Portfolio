@@ -60,8 +60,8 @@ export function LibrariesAndFramework() {
           </div>
         </div>
 
-        <div key={2} data-id={`card-${2}`}>
-          <div className="flex select-none flex-col space-y-1 p-2 px-4">
+        <div key={2} data-id={`card-${2}`} className="flex items-center">
+          <div className="flex select-none flex-col space-y-1 px-1 dark:bg-white rounded-lg ">
             <Magnetic
               intensity={0.5}
               springOptions={springOptions}

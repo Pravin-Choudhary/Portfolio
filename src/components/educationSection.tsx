@@ -24,7 +24,7 @@ export function EducationSection(){
                                 <h3 className="text-lg font-semibold">MIT Arts, Commerce & Science College (MITACSC), Pune</h3>
                                 <p className="text-muted-foreground text-lg">BCA(Science) , Computer Applications</p>
                                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-base text-muted-foreground">
-                                    <span>Jun 2023 - Apr 2026</span>
+                                    <span>Passing out 2026</span>
                                     <span className="hidden sm:inline">•</span>
                                     <span>CGPA: 8.9/10</span>
                                 </div>

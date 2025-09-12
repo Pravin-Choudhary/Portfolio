@@ -78,7 +78,7 @@ export function DatabasesLanguage() {
               <TooltipProvider delayDuration={0}>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <div className="flex items-center">
+                    <div className="flex items-center dark:bg-white rounded-lg p-1">
                       <img
                         src="https://webimages.mongodb.com/_com_assets/cms/kuyjf3vea2hg34taa-horizontal_default_slate_blue.svg?auto=format%252Ccompress"
                         alt="mongodb"
