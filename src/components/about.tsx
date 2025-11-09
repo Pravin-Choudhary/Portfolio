@@ -179,12 +179,18 @@ export function About() {
             }}
           >
             <div className="pl-0 space-x-3 flex items-center ">
+            <Link
+              href="/Pravin-Choudhary-Resume.pdf"
+              target="_blank"
+              download
+            >  
               <Button size={"lg"}>
                 <Download className="h-4 w-4 sm:h-6 sm:w-6" />{" "}
                 <p className="flex items-center text-sm font-medium sm:text-base">
                   Resume
                 </p>
               </Button>
+            </Link>
 
               <Link href="https://github.com/Pravin-Choudhary" target="_blank">
                 <Button variant={"outline"} className="cursor-pointer">
@@ -192,13 +198,13 @@ export function About() {
                 </Button>
               </Link>
 
-              <Link href="https://github.com/Pravin-Choudhary" target="_blank">
+              <Link href="mailto:pravin.devv@gmail.com" target="_blank">
                 <Button variant={"outline"} className="cursor-pointer">
                   <Mail />
                 </Button>
               </Link>
 
-              <Link href="https://github.com/Pravin-Choudhary" target="_blank">
+              <Link href="https://x.com/Pravin__Dev" target="_blank">
                 <Button variant={"outline"} className="cursor-pointer">
                   <TwitterIcon />
                 </Button>
