@@ -92,7 +92,7 @@ export function About() {
                 <div className="flex items-center space-x-2 ">
                   <Mail className="flex items-center h-[18px] w-[18px]" />
                   <p className="flex items-center text-sm sm:text-base">
-                    pravinchoudhary.aesxa29@gmail.com
+                    pravin.devv@gmail.com
                   </p>
                 </div>
                 <div className="flex items-center space-x-2 ">

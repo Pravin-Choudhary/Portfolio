@@ -58,10 +58,10 @@ function onSubmit(values: z.infer<typeof formSchema>){
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
                   <Link
-                    href="mailto:haquedot@gmail.com"
+                    href="mailto:pravin.devv@gmail.com"
                     className="font-medium hover:underline"
                   >
-                    pravinchoudhary.aesxa29@gmail.com
+                    pravin.devv@gmail.com
                   </Link>
                 </div>
               </div>
