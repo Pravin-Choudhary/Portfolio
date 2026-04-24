@@ -27,145 +27,176 @@ const formSchema = z.object({
     .max(150, { message: "Message cannot be longer than 150 characters. Please shorten it." }),
 });
 
-export function Contact(){
+import { useState } from "react";
+import { sendEmail } from "@/app/actions/send-email";
 
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
-         defaultValues: {
-         username: "",
-         email : "",
-         msg : ""
+export function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<{ type: 'success' | 'error' | null; message: string | null }>({
+    type: null,
+    message: null
+  });
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      username: "",
+      email: "",
+      msg: ""
     },
-});
+  });
 
-function onSubmit(values: z.infer<typeof formSchema>){
-    console.log(values);
-}
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+    setStatus({ type: null, message: null });
 
-    return(
-        <>
-         <h2 className="text-3xl font-bold mb-10">Contact Me</h2>
+    const result = await sendEmail(values);
 
-        <div className="grid md:grid-cols-5 gap-10 w-full">
-          <div className="space-y-6 col-span-2">
-            <h3 className="text-xl font-semibold">Get In Touch</h3>
+    if (result.success) {
+      setStatus({ type: 'success', message: 'Message sent successfully! I will get back to you soon.' });
+      form.reset();
+    } else {
+      setStatus({ type: 'error', message: result.error || 'Failed to send message. Please try again later.' });
+    }
+    setIsSubmitting(false);
+  }
 
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                  <Mail className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
-                  <Link
-                    href="mailto:pravin.devv@gmail.com"
-                    className="font-medium hover:underline"
-                  >
-                    pravin.devv@gmail.com
-                  </Link>
-                </div>
+  return (
+    <>
+      <h2 className="text-3xl font-bold mb-10">Contact Me</h2>
+
+      <div className="grid md:grid-cols-5 gap-10 w-full">
+        <div className="space-y-6 col-span-2">
+          <h3 className="text-xl font-semibold">Get In Touch</h3>
+
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
+                <Mail className="h-5 w-5" />
               </div>
-
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                  <Phone className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Phone</p>
-                  <Link
-                    href="tel:7502461630"
-                    className="font-medium hover:underline"
-                  >
-                    +91 76206 28928 
-                  </Link>
-                </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Email</p>
+                <Link
+                  href="mailto:pravin.devv@gmail.com"
+                  className="font-medium hover:underline"
+                >
+                  pravin.devv@gmail.com
+                </Link>
               </div>
+            </div>
 
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                  <MapPin className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-medium">Pune, India</p>
-                </div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
+                <Phone className="h-5 w-5" />
               </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Phone</p>
+                <Link
+                  href="tel:7502461630"
+                  className="font-medium hover:underline"
+                >
+                  +91 76206 28928
+                </Link>
+              </div>
+            </div>
 
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                  <Linkedin className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">LinkedIn</p>
-                  <Link
-                    href="https://www.linkedin.com/in/pravin-choudhary-945658375/"
-                    target="_blank"
-                    className="font-medium hover:underline"
-                  >
-                    linkedin.com/in/pravin-choudhary
-                  </Link>
-                </div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
+                <MapPin className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Location</p>
+                <p className="font-medium">Pune, India</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
+                <Linkedin className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">LinkedIn</p>
+                <Link
+                  href="https://www.linkedin.com/in/pravin-choudhary-945658375/"
+                  target="_blank"
+                  className="font-medium hover:underline"
+                >
+                  linkedin.com/in/pravin-choudhary
+                </Link>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="space-y-8 col-span-3">
-                <div>
-                        <h3 className="text-xl font-semibold">Send me a Message</h3>  
-                </div>
-                  <div>
-                        <Form {...form}>
-                            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-                            <div className="sm:flex w-full space-y-6 sm:space-y-0 sm:space-x-15">
-                              <FormField
-                                control={form.control}
-                                name="username"
-                                render={({ field }) => (
-                                  <FormItem className="space-x-2 space-y-1">
-                                      <FormLabel className="px-2 text-base">Name</FormLabel>
-                                      <FormControl>
-                                        <Input placeholder="Your Name" {...field} className="w-[95%] sm:w-full" />
-                                      </FormControl>
-                                      <FormMessage />
-                                  </FormItem>
-                                )}
-                              />
-
-                                <FormField
-                                control={form.control}
-                                name="email"
-                                render={({ field }) => (
-                                  <FormItem className="space-x-2 space-y-1">
-                                      <FormLabel  className="px-2 text-base">Email</FormLabel>
-                                      <FormControl>
-                                        <Input placeholder="Your Name" {...field} className="w-[95%] sm:w-full" />
-                                      </FormControl>
-                                      <FormMessage />
-                                  </FormItem>
-                                )}
-                              />
-                            </div>
-
-                                <FormField
-                                control={form.control}
-                                name="msg"
-                                render={({ field }) => (
-                                  <FormItem className="space-x-2 space-y-1">
-                                      <FormLabel  className="px-2 text-base">Message</FormLabel>
-                                      <FormControl>
-                                        <Textarea placeholder="Your Name" {...field} className="min-h-[100px] w-[95%] sm:w-full"/>
-                                      </FormControl>
-                                      <FormMessage />
-                                  </FormItem>
-                                )}
-                              />
-
-                              <Button type="submit" className="w-[95%] sm:w-full">Submit Message</Button>
-                            </form>
-                        </Form>
-                    </div>
-                </div>
+        <div className="space-y-8 col-span-3">
+          <div>
+            <h3 className="text-xl font-semibold">Send me a Message</h3>
           </div>
+          <div>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                <div className="sm:flex w-full space-y-6 sm:space-y-0 sm:space-x-15">
+                  <FormField
+                    control={form.control}
+                    name="username"
+                    render={({ field }) => (
+                      <FormItem className="space-x-2 space-y-1">
+                        <FormLabel className="px-2 text-base">Name</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Your Name" {...field} className="w-[95%] sm:w-full" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem className="space-x-2 space-y-1">
+                        <FormLabel className="px-2 text-base">Email</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Your Name" {...field} className="w-[95%] sm:w-full" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <FormField
+                  control={form.control}
+                  name="msg"
+                  render={({ field }) => (
+                    <FormItem className="space-x-2 space-y-1">
+                      <FormLabel className="px-2 text-base">Message</FormLabel>
+                      <FormControl>
+                        <Textarea placeholder="Your Name" {...field} className="min-h-[100px] w-[95%] sm:w-full" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                {status.message && (
+                  <div className={`p-3 rounded-md text-sm ${status.type === 'success' ? 'bg-green-500/10 text-green-500 border border-green-500/20' : 'bg-red-500/10 text-red-500 border border-red-500/20'}`}>
+                    {status.message}
+                  </div>
+                )}
+
+                <Button
+                  type="submit"
+                  className="w-[95%] sm:w-full"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Submit Message"}
+                </Button>
+              </form>
+            </Form>
+          </div>
+        </div>
+      </div>
     </>
-    )
+  )
 }
