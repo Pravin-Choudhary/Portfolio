@@ -1,6 +1,7 @@
 import { About } from "@/components/about";
 import { Contact } from "@/components/contact";
 import { EducationSection } from "@/components/educationSection";
+import { ExperienceSection } from "@/components/experienceSection";
 import { NavBar } from "@/components/navBar";
 import Projects from "@/components/projects";
 import { SkillSection } from "@/components/skills";
@@ -31,35 +32,23 @@ export default function Page() {
           </div>
         </section>
 
-         <section id="education">
-           <InView
-          variants={{
-            hidden: {
-              opacity: 0,
-              y: 30,
-              scale: 0.95,
-              filter: 'blur(4px)',
-            },
-            visible: {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              filter: 'blur(0px)',
-            },
-          }}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}
-          viewOptions={{ margin: '0px 0px -350px 0px' }}
-        >
+        <section id="experience">
           <div className="p-2 max-w-4xl w-full">
-              <EducationSection/>
+              <ExperienceSection/>
           </div>
-        </InView>
-      </section>
+        </section>
+
        <section id="projects">
           <div className="p-2 max-w-4xl w-full">
               <Projects/>
           </div>
         </section>
+
+         <section id="education">
+          <div className="p-2 max-w-4xl w-full">
+              <EducationSection/>
+          </div>
+      </section>
          <section id="contact">
           <div className="p-2 max-w-4xl w-full">
               <Contact/>
