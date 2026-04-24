@@ -1,7 +1,8 @@
+// Fixed next.config.ts
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-    eslint: {
+const nextConfig = {
+  eslint: {
     ignoreDuringBuilds: true,
   },
 };
