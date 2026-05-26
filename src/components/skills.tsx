@@ -41,7 +41,7 @@ export function SkillSection(){
             }}
           >
                 <div>
-                    <h1 className="text-3xl sm:text-[32px] tracking-normal font-[600] px-1">My Skills</h1>
+                    <h2 className="text-3xl sm:text-[32px] tracking-normal font-[600] px-1">My Skills</h2>
                 </div>
                 <div>
                     <p className="text-muted-foreground dark:text-muted-foreground text-sm sm:text-base pl-1">

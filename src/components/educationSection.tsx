@@ -14,9 +14,9 @@ const educationData = [
 export function EducationSection() {
   return (
     <div className="pl-0 sm:p-2 sm:px-6 space-y-6">
-      <h1 className="text-3xl sm:text-[32px] tracking-normal font-[600] px-1 text-foreground">
+      <h2 className="text-3xl sm:text-[32px] tracking-normal font-[600] px-1 text-foreground">
         Education
-      </h1>
+      </h2>
 
       <div className="space-y-12">
         {educationData.map((edu, index) => (
